@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Latihan membuat kalkulator sederhana
+
+        float a,b, hasil;
+        String operator;
+        Scanner userInput = new Scanner(System.in);
+
+        System.out.println("====================================");
+        System.out.println("        KALKULATOR SEDERHANA        ");
+        System.out.println("====================================");
+        System.out.print("Masukan angka: ");
+        a = userInput.nextFloat();
+        System.out.print("Masukan operator (+,-,*,/): ");
+        operator = userInput.next();
+        System.out.print("Masukan angka: ");
+        b = userInput.nextFloat();
+        System.out.println("------------------------------------");
+
+        switch (operator) {
+            case "+":
+                hasil = a + b;
+                System.out.println("Hasil = " + hasil);
+                break;
+            case "-":
+                hasil = a - b;
+                System.out.println("Hasil = " + hasil);
+                break;
+            case "*":
+                hasil = a * b;
+                System.out.println("Hasil = " + hasil);
+                break;
+            case "/":
+                hasil = a / b;
+                System.out.println("Hasil = " + hasil);
+                break;
+            default:
+                System.out.println("Operator yang anda masukan salah");
+
+        }
+
+        System.out.println("------------------------------------");
+        System.out.println("Selesai");
+        System.out.println("====================================");
+
+    }
+}
