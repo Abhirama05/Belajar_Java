@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Main{
+
+    public static void main(String[] args) {
+
+        Scanner userInput = new Scanner(System.in);
+        String sholat, waktu;
+
+        System.out.print("Masukan jumlah rakaat sholat: ");
+        sholat = userInput.next();
+
+        switch (sholat){
+            case "2":
+                System.out.println("ini adalah sholat Shubuh");
+                break;
+
+            case "3":
+                System.out.println("ini adalah sholat Maghrib");
+
+            case "4":
+                if (sholat.equalsIgnoreCase("4")){
+                    System.out.print("Siang, sore, atau malam? ");
+                    waktu = userInput.next();
+                    if (waktu.equalsIgnoreCase("Siang") || waktu.equalsIgnoreCase("siang")){
+                        System.out.println("ini adalah sholat Dzuhur");
+                    } else if (waktu.equalsIgnoreCase("Sore") || waktu.equalsIgnoreCase("sore")){
+                        System.out.println("ini adalah sholat Ashar");
+                    } else if (waktu.equalsIgnoreCase("Malam") || waktu.equalsIgnoreCase("malam")){
+                        System.out.println("ini adalah sholat Isya");
+                    }
+                }
+                break;
+
+            default:
+                System.out.println("Jumlah rakaat tidak ada dalam sholat");
+        }
+    }
+}
