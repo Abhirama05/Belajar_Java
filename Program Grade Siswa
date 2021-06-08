@@ -1,0 +1,47 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Program Grade Siswa
+
+        String nama, kelas, grade, npm;
+        float nilai;
+        Scanner userInput = new Scanner(System.in);
+
+        System.out.println("=====================================================");
+        System.out.println("              MENENTUKAN GRADE SISWA                 ");
+        System.out.println("=====================================================");
+        System.out.print("Masukan nama: ");
+        nama = userInput.next();
+        System.out.print("Masukan NPM: ");
+        npm = userInput.next();
+        System.out.print("Masukan kelas: ");
+        kelas = userInput.next();
+        System.out.println("-----------------------------------------------------");
+        System.out.print("Masukan nilai: ");
+        nilai = userInput.nextInt();
+        System.out.println("-----------------------------------------------------");
+
+        grade = "A,B,C,D,E";
+
+        if (nilai <= 100 && nilai >= 95) {
+            grade = "A";
+        } else if (nilai < 95 && nilai >=85) {
+            grade = "B";
+        } else if (nilai < 85 && nilai >= 75) {
+            grade = "C";
+        } else if (nilai < 75) {
+            grade = "D";
+        } else {
+            System.out.println("Grade = E. Anda tidak lulus");
+        }
+
+        System.out.println("Nama = " + nama);
+        System.out.println("NPM = " + npm);
+        System.out.println("Kelas = " + kelas);
+        System.out.println("Grade: " + grade);
+        System.out.println("=====================================================");
+    }
+}
