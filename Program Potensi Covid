@@ -1,0 +1,90 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+
+        // contoh program nested if
+
+        String nama, umur, pergi, angkot, pasar, batuk;
+        String Sehat = "Anda tidak memiliki potensi terkena virus corona.";
+        String Baik = "Anda memiliki potensi terkena virus corona. Silakan isolasi mandiri di rumah.";
+        String OTG = "Anda memiliki potensi terkena virus corona. Silakan periksa di RS terdekat.";
+        String Bahaya = "Anda sangat memiliki potensi terkena virus corona. Segera periksa ke RS terdekat";
+
+        Scanner userInput = new Scanner(System.in);
+
+        System.out.println("=========================================================================================");
+        System.out.println("|                  SELAMAT DATANG DI PROGRAM PERIKSA GEJALA COVID                       |");
+        System.out.println("=========================================================================================");
+        System.out.print("Silakan masukan nama anda: ");
+        nama = userInput.next();
+        System.out.print("Silakan masukan usia anda: ");
+        umur = userInput.next();
+        System.out.print("Apakah dalam seminggu terakhir anda berpergian? ");
+        pergi = userInput.next();
+        System.out.print("Apakah dalam seminggu terakhir anda menggunakan transportasi umum? ");
+        angkot = userInput.next();
+        System.out.print("Apakah dalam seminggu terakhir anda pergi ke tempat ramai, seperti pasar? ");
+        pasar = userInput.next();
+        System.out.print("Apakah dalam seminggu terakhir ada gejala batuk atau flu? ");
+        batuk = userInput.next();
+        System.out.println("-----------------------------------------------------------------------------------------");
+        System.out.println("Nama = " + nama);
+        System.out.println("Usia = " + umur + " tahun");
+        System.out.println("Berpergian = " + pergi);
+        System.out.println("Transportasi umum = " + angkot);
+        System.out.println("Tempat ramai = " + pasar);
+        System.out.println("Gejala batuk atau flu = " + batuk);
+        System.out.println("-----------------------------------------------------------------------------------------");
+
+        if (pergi.equalsIgnoreCase("Ya")) {
+
+                if (angkot.equalsIgnoreCase("Ya")) {
+
+                    if (pasar.equalsIgnoreCase("Ya")) {
+
+                        if (batuk.equalsIgnoreCase("Ya")) {
+                            System.out.println("Kondisi = " + Bahaya);
+
+                        } else {
+                            System.out.println("Kondisi = " + OTG);
+                        }
+
+                    } else if (batuk.equalsIgnoreCase("Ya")){
+                        System.out.println("Kondisi = " + OTG);
+
+                    } else {
+
+                        System.out.println("Kondisi = " + Baik);
+                    }
+
+                } else if (pasar.equalsIgnoreCase("Ya")) {
+                    System.out.println("Kondisi = " + OTG);
+
+                } else if (batuk.equalsIgnoreCase("Ya")) {
+
+                    System.out.println("Kondisi = " + OTG);
+
+                } else {
+                    System.out.println("Kondisi = " + Baik);
+                }
+
+
+        } else if (angkot.equalsIgnoreCase("Ya")) {
+
+            System.out.println("Kondisi = " + OTG);
+
+        } else if (pasar.equalsIgnoreCase("Ya")) {
+            System.out.println("Kondisi = " + Baik);
+
+        } else if (batuk.equalsIgnoreCase("Ya")) {
+            System.out.println("Kondisi = " + Baik);
+
+        } else {
+            System.out.println("Kondisi = " + Sehat);
+        }
+
+        System.out.println("=========================================================================================");
+
+    }
+}
