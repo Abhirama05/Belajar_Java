@@ -1,0 +1,54 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String nama;
+        long Jumlah_anak,penghasilan,listrik;
+        long pendidikan1,pendidikan2,pendidikan3,pendidikan4;
+        long bansos1,bansos2,bansos3,bansos4;
+        Scanner Input = new Scanner(System.in);
+
+        System.out.print("Nama Kepala Keluarga: ");
+        nama = Input.next();
+        System.out.print("Jumlah Anak Usia (6-17 Tahun): ");
+        Jumlah_anak = Input.nextLong();
+        System.out.print("Penghasilan perbulan: ");
+        penghasilan = Input.nextLong();
+        System.out.print("Konsumsi Listrik Tiap Bulan: ");
+        listrik = Input.nextLong();
+        System.out.println("===================================================");
+        System.out.println("TOTAL DARI " + Jumlah_anak + " anak");
+        System.out.println(nama + " akan mendapatkan: ");
+
+        if (penghasilan < 2000000 && listrik < 100000 ) {
+            pendidikan1 = 700000 * Jumlah_anak;
+            System.out.println("Besaran Subsidi Pendidikan: " + pendidikan1);
+            bansos1 = 400000 * Jumlah_anak;
+            System.out.println("Besaran Bantuan Sosial: " + bansos1);
+
+        } else if (penghasilan >= 2000000 && listrik >= 100000) {
+            pendidikan2 = 300000 * Jumlah_anak;
+            System.out.println("Besaran Subsidi Pendidikan: " + pendidikan2);
+            bansos2 = 200000 * Jumlah_anak;
+            System.out.println("Besaran Bantuan Sosial: " + bansos2);
+
+        } else if (penghasilan > 2000000 && listrik < 100000) {
+            pendidikan3 = 100000 * Jumlah_anak;
+            System.out.println("Besaran Subsidi Pendidikan: " + pendidikan3);
+            bansos3 = 100000 * Jumlah_anak;
+            System.out.println("Besaran Bantuan Sosial: " + bansos3);
+
+        } else if (penghasilan <= 2000000 && listrik >= 100000) {
+            pendidikan4 = 100000 * Jumlah_anak;
+            System.out.println("Besaran Subsidi Pendidikan: " + pendidikan4);
+            bansos4 = 100000 * Jumlah_anak;
+            System.out.println("Besaran Bantuan Sosial: " + bansos4);
+
+        }
+
+        System.out.println("===================================================");
+
+    }
+}
