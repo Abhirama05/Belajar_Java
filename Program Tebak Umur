@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Menebak umur seseorang
+
+        Scanner userInput = new Scanner(System.in);
+
+        String nama, ultah;
+        int angka, lahir, Step1, Step2, Step3, Step4, Step5, Hasil;
+
+        System.out.println("============================================");
+        System.out.println("|         PROGRAM TEBAK UMUR ANDA          |");
+        System.out.println("============================================");
+        System.out.print("Silakan masukan nama: ");
+        nama = userInput.next();
+        System.out.print("Silakan Pilih angka dari 1 sampai 10: ");
+        angka = userInput.nextInt();
+        System.out.print("Silakan masukan tahun kelahiran anda: ");
+        lahir = userInput.nextInt();
+        System.out.print("Apakah tahun ini sudah berulang tahun (Sudah/Belum)? ");
+        ultah = userInput.next();
+        System.out.println("--------------------------------------------");
+        Step1 = angka * 2;
+        Step2 = Step1 + 5;
+        Step3 = Step2 * 50;
+
+        if (ultah.equalsIgnoreCase("Sudah")) {
+             Step4 = Step3 + 1771;
+        } else {
+            Step4 = Step3 + 1770;
+        }
+
+        Step5 = Step4 - lahir;
+        Hasil = Step5;
+
+        System.out.println("Nama = " + nama);
+        System.out.println("---> " + Hasil + " <---");
+        System.out.println("- Angka pertama adalah angka pilihan anda");
+        System.out.println("- Dua angka terakhir adalah umur anda");
+        System.out.println("==============================================");
+
+    }
+}
