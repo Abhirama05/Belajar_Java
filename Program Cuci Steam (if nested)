@@ -1,0 +1,55 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String kendaraan, nama;
+        int harga, paket, uang, kembalian;
+        Scanner Input = new Scanner (System.in);
+
+        System.out.println("================ CUCI STEAM BERSIH ================");
+        System.out.print("Masukan nama: ");
+        nama = Input.next();
+        System.out.print("Apa Jenis Kendaraan Anda (Motor/Mobil): ");
+        kendaraan = Input.next();
+        System.out.println("===================================================");
+        System.out.println("PAKET YANG TERSEDIA");
+        System.out.println("Paket 1 ==> Wax, Cuci, Poles");
+        System.out.println("Paket 2 ==> Wax, Cuci");
+        System.out.println("Paket 3 ==> Cuci Bersih");
+        System.out.println("===================================================");
+        System.out.print("Pilih paket: ");
+        paket = Input.nextInt();
+        System.out.println("===================================================");
+        System.out.println("Nama: " + nama);
+        System.out.println("Jenis kendaraan: " + kendaraan);
+        System.out.println("Paket = " + paket);
+        System.out.println("===================================================");
+        harga = 0;
+        if (kendaraan.equalsIgnoreCase("Motor") || kendaraan.equalsIgnoreCase("motor")) {
+            if (paket == 1) {
+                harga = 100000;
+            } else if (paket == 2) {
+                harga = 80000;
+            } else if (paket == 3) {
+                harga = 50000;
+            }
+        } else if (kendaraan.equalsIgnoreCase("Mobil") || kendaraan.equalsIgnoreCase("mobil")) {
+            if (paket == 1) {
+                harga = 450000;
+            } else if (paket == 2) {
+                harga = 350000;
+            } else if (paket == 3) {
+                harga = 150000;
+            }
+        }
+        System.out.println("Harga = Rp " + harga);
+        System.out.print("Masukan uang anda: Rp ");
+        uang = Input.nextInt();
+        System.out.println("====================================================");
+        kembalian = uang - harga;
+        System.out.println("Kembali anda: Rp " + kembalian);
+
+    }
+}
