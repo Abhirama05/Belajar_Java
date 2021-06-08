@@ -1,0 +1,71 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //Latihan deret fibonacci dengan macam-macam loop
+
+        int Fn, Fn1, Fn2, n;
+        Scanner userInput = new Scanner (System.in);
+
+        System.out.println("=========================================");
+        System.out.println("         PROGRAM DERET FIBONACCI         ");
+        System.out.println("=========================================");
+        System.out.print("Mengambil nilai deret fibonacci ke- : ");
+        n = userInput.nextInt();
+        System.out.println("-----------------------------------------");
+
+        // For loop
+        System.out.println("Menggunakan For Loop: ");
+        Fn2 = 0;
+        Fn1 = 1;
+        Fn = 1;
+
+        for (int i = 1; i <= n; i++) {
+            System.out.println("Fiboacci ke-" + i + " adalah " + Fn);
+            Fn = Fn1 + Fn2;
+            Fn2 = Fn1;
+            Fn1 = Fn;
+        }
+
+        System.out.println();
+
+        // Do while
+        System.out.println("Menggunakan Do While Loop: ");
+        Fn2 = 0;
+        Fn1 = 1;
+        Fn = 1;
+        int a = 1;
+
+        do {
+            System.out.println("Fiboacci ke-" + a + " adalah " + Fn);
+            Fn = Fn1 + Fn2;
+            Fn2 = Fn1;
+            Fn1 = Fn;
+            a++;
+
+        } while (a <= n ) ;
+
+        System.out.println();
+
+        // While Loop
+        System.out.println("Menggunakan While Loop: ");
+        Fn2 = 0;
+        Fn1 = 1;
+        Fn = 1;
+        int b = 1;
+
+        while (b <= n) {
+            System.out.println("Fiboacci ke-" + b + " adalah " + Fn);
+            Fn = Fn1 + Fn2;
+            Fn2 = Fn1;
+            Fn1 = Fn;
+            b++;
+
+        }
+
+        System.out.println("=========================================");
+
+    }
+}
