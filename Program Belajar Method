@@ -1,0 +1,42 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // belajar fungsi atau method
+
+        int y,x;
+        String loop;
+        boolean kondisi;
+
+        Scanner Inputuser = new Scanner (System.in);
+
+
+        do {
+            System.out.print("Silakan masukan nilai x: ");
+            x = Inputuser.nextInt();
+
+            y = hitung(x);
+            System.out.println("Nilai y dari x = "+ x + " adalah " + y);
+            System.out.println("-------------------------------------------");
+            System.out.print("Apakah anda ingin mencari nilai x yang lain? ");
+            loop = Inputuser.next();
+            System.out.println("-------------------------------------------");
+
+            if (loop.equalsIgnoreCase("Ya")) {
+                kondisi = true;
+            } else {
+                kondisi = false;
+                System.out.println("Selesai");
+            }
+        } while (kondisi);
+    }
+
+    private static int hitung (int input){
+        int hasil;
+        hasil = (input + 5 * 2) * input;
+
+        return hasil;
+    }
+}
