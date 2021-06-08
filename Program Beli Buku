@@ -1,0 +1,71 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int kode_penerbit, harga, kembalian, uang_masuk;
+        long NPM;
+        String nama, kelas, kode_judul;
+        Scanner userInput = new Scanner (System.in);
+
+        System.out.println("========== PROGRAM BELI BUKU ==========");
+        System.out.print("Masukan nama: ");
+        nama = userInput.next();
+        System.out.print("Masukan NPM: ");
+        NPM = userInput.nextLong();
+        System.out.print("Masukan kelas: ");
+        kelas = userInput.next();
+        System.out.println("=======================================");
+        System.out.println("      JUDUL BUKU     ");
+        System.out.println("---------------------");
+        System.out.println("001 ==> Buku Matematika");
+        System.out.println("002 ==> Buku Bahasa Indonesia");
+        System.out.println("003 ==> Buku IPA");
+        System.out.println("004 ==> Buku IPS");
+        System.out.println("---------------------------------------");
+        System.out.println("       PENERBIT      ");
+        System.out.println("---------------------");
+        System.out.println("101 ==> Erlangga");
+        System.out.println("102 ==> Yudhistira");
+        System.out.println("=======================================");
+        System.out.print("Masukan kode judul buku yang ingin dibeli: ");
+        kode_judul = userInput.next();
+        System.out.print("Masukan kode penerbit yang ingin dibeli: ");
+        kode_penerbit = userInput.nextInt();
+        System.out.println("=======================================");
+        System.out.println("Nama         : " + nama);
+        System.out.println("NPM          : " + NPM);
+        System.out.println("Kelas        : " + kelas);
+        System.out.println("Kode buku    : " + kode_judul);
+        System.out.println("Kode Penerbit: " + kode_penerbit);
+        System.out.println("=======================================");
+        harga = 0;
+        if (kode_judul.equalsIgnoreCase("001") && kode_penerbit == 101) {
+            harga = 150000;
+        } else if (kode_judul.equalsIgnoreCase("001") && kode_penerbit == 102) {
+            harga = 100000;
+        } else if (kode_judul.equalsIgnoreCase("002") && kode_penerbit == 101) {
+            harga = 130000;
+        } else if (kode_judul.equalsIgnoreCase("002") && kode_penerbit == 102) {
+            harga = 95000;
+        } else if (kode_judul.equalsIgnoreCase("003") && kode_penerbit == 101) {
+            harga = 135000;
+        } else if (kode_judul.equalsIgnoreCase("003") && kode_penerbit == 102) {
+            harga = 98000;
+        } else if (kode_judul.equalsIgnoreCase("004") && kode_penerbit == 101) {
+            harga = 125000;
+        } else if (kode_judul.equalsIgnoreCase("004") && kode_penerbit == 102) {
+            harga = 92000;
+        } else {
+            System.out.println("Maaf, Anda memasukan kode yang salah");
+        }
+        System.out.println("Harga: Rp " + harga);
+        System.out.print("Masukan uang anda: Rp ");
+        uang_masuk = userInput.nextInt();
+        System.out.println("================Loading================");
+        kembalian = uang_masuk - harga;
+        System.out.println("Kembalian anda: Rp " + kembalian);
+
+    }
+}
