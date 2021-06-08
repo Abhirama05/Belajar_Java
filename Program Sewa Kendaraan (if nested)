@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String kendaraan, tipe;
+        int harga;
+        Scanner userInput = new Scanner(System.in);
+
+        System.out.println("======== BIAYA SEWA KENDARAAN ========");
+        System.out.println();
+        System.out.print("Sewa Kendaraan (A) ==> Mobil, (B) ==> Motor : ");
+        kendaraan = userInput.next();
+        System.out.print("Tipe Kendaraan (A) ==> Mewah, (B) ==> Biasa : ");
+        tipe = userInput.next();
+        System.out.println("======================================");
+        harga = 0;
+        if (kendaraan.equalsIgnoreCase("A")) {
+            if (tipe.equalsIgnoreCase("A")) {
+                harga = 300000;
+            } else if (tipe.equalsIgnoreCase("B")) {
+                harga = 100000;
+            }
+        } else if (kendaraan.equalsIgnoreCase("B")) {
+            if (tipe.equalsIgnoreCase("A")) {
+                harga = 150000;
+            } else if (tipe.equalsIgnoreCase("B")) {
+                harga = 50000;
+            }
+        }
+
+        System.out.println("Harga = Rp " + harga);
+
+    }
+}
