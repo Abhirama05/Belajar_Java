@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Latihan Looping Sederhana dengan For Loop
+
+        int nilaiAwal, nilaiAkhir, total;
+        Scanner Input = new Scanner (System.in);
+
+        System.out.println("=========================================");
+        System.out.println("        PROGRAM LOOPING SEDERHANA        ");
+        System.out.println("=========================================");
+        System.out.print("Masukan nilai awal: ");
+        nilaiAwal = Input.nextInt();
+        System.out.print("Masukan nilai akhir: ");
+        nilaiAkhir = Input.nextInt();
+        System.out.println("-----------------------------------------");
+
+        total =  0;
+
+        for (; nilaiAwal <= nilaiAkhir; nilaiAwal++){
+            total = total + nilaiAwal;
+            System.out.println("ditambah " + nilaiAwal + " menjadi " + total);
+        }
+
+        System.out.println("=========================================");
+
+
+    }
+}
