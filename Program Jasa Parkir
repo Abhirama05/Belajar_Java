@@ -1,0 +1,97 @@
+import  java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Program Jasa Parkir
+        String nama, kendaraan, plat, kategori;
+        int jam_masuk, jam_keluar, total_jam, Total_Harga, uangmasuk, kembalian, tarif, harga_A, harga_B, harga_C, tarifA,tarifB, tarifC;
+        Scanner Input = new Scanner(System.in);
+
+        System.out.println("==========SELAMAT DATANG DI PROGRAM JASA PARKIR==========");
+        System.out.println("=========================================================");
+        System.out.print("Masukan nama anda: ");
+        nama = Input.next();
+        System.out.print("Pilih jenis kendaraan (Motor/Mobil): ");
+        kendaraan = Input.next();
+        System.out.print("Masukan plat nomor anda: ");
+        plat = Input.next();
+        System.out.print("Jam masuk: ");
+        jam_masuk = Input.nextInt();
+        System.out.print("Jam keluar: ");
+        jam_keluar =Input.nextInt();
+        total_jam = jam_keluar-jam_masuk;
+        System.out.println("Total jam: " + total_jam);
+        System.out.println("=========================================================");
+        System.out.println("               Pilih Kategori Lama Jam                   ");
+        System.out.println("=========================================================");
+        System.out.println("A = 1-5 jam");
+        System.out.println("B = 6-10 jam");
+        System.out.println("C = 11-24 jam");
+        System.out.println("Kategori: ");
+        kategori = Input.next();
+
+        Total_Harga = 0;
+        tarif = 0;
+
+        switch (kendaraan) {
+            case "Mobil":
+                tarif = 5000;
+                break;
+            case "Motor":
+                tarif = 2000;
+                break;
+        }
+
+        tarifA = 1000;
+        tarifB = 2000;
+        tarifC = 3000;
+        harga_A = tarif + (total_jam-1)*tarifA;
+        harga_B = tarif + (total_jam-1)*tarifB;
+        harga_C = tarif + (total_jam-1)*tarifC;
+
+        if (kategori.equalsIgnoreCase("A")) {
+            Total_Harga = harga_A;
+        } else if (kategori.equalsIgnoreCase("B")) {
+            Total_Harga = harga_B;
+        } else if (kategori.equalsIgnoreCase("C")) {
+            Total_Harga = harga_C;
+        }
+
+        System.out.println("=========================================================");
+        System.out.println("Nama: " + nama);
+        System.out.println("Nomor kendaraan: " + plat);
+        System.out.println("Jenis kendaraan: " + kendaraan);
+        System.out.println("=========================================================");
+        System.out.println("Yang harus anda bayar: Rp " + Total_Harga);
+        System.out.println("=========================================================");
+        System.out.print("Masukkan uang anda: Rp ");
+        uangmasuk = Input.nextInt();
+        System.out.println("========================LOADING==========================");
+        if (uangmasuk >= Total_Harga) {
+            kembalian = uangmasuk - Total_Harga;
+            System.out.println("Kembalian anda: Rp " + kembalian);
+        } else {
+            System.out.println("Maaf uang yang anda masukan kurang");
+            System.out.println("---------------------------------------------------------");
+
+            do {
+                System.out.print("Masukkan uang anda: Rp ");
+                uangmasuk = Input.nextInt();
+                System.out.println("========================LOADING==========================");
+                if (uangmasuk >= Total_Harga) {
+                    kembalian = uangmasuk - Total_Harga;
+                    System.out.println("Kembalian anda: Rp " + kembalian);
+                } else {
+                    System.out.println("Maaf uang yang anda masukan kurang");
+                    System.out.println("---------------------------------------------------------");
+                }
+            } while(uangmasuk < Total_Harga);
+        }
+
+        System.out.println("----------------------------------------------------------");
+        System.out.println("Terimakasih banyak");
+
+    }
+}
