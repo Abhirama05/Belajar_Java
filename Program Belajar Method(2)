@@ -1,0 +1,38 @@
+package com.tutorial;
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Masukkan panjang: ");
+        int panjang = scan.nextInt();
+        System.out.print("Masukkan lebar: ");
+        int lebar = scan.nextInt();
+
+        Gambar(panjang,lebar);
+
+        System.out.println("Luas = " + Luas(panjang, lebar));
+        System.out.println("Keliling = " + Keliling(panjang, lebar));
+    }
+
+    private static void Gambar(int p, int l){
+        for (int i = 0; i < l; i++){
+            for ( int j = 0; j < p; j++){
+                System.out.print("* ");
+            }
+            System.out.print("\n");
+        }
+    }
+
+    private static int Luas(int p, int l){
+        int luas = p * l;
+        return luas;
+    }
+
+    private static int Keliling(int p, int l){
+        int keliling = 2 * (p + l);
+        return keliling;
+    }
+}
